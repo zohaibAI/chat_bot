@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "CHAT_BOT"
+version = "0.1.0"
+description = "chatbot using llama-3-70b/8b"
+authors = ["zohaibarshid <zohaib.arshid@forbmax.ai>"]
+
+
+[tool.poetry.dependencies]
+python = ">=3.10.0,<3.12"
+langchain = "^0.2.2"
+langchain-ollama = "^0.1.0"
+langchain-openai = "^0.1.17"
+langchain-community = "^0.2.2"
+langchain-nvidia_ai_endpoints = "^0.1.1"
+langchain-nvidia-trt = "^0.0.1rc0"
+langchain-groq = "^0.1.4"
+fastapi = "^0.110.3"
+uvicorn = "^0.29.0"
+gunicorn = "^22.0.0"
+sqlalchemy = "^2.0.30"
+
+[tool.pyright]
+# https://github.com/microsoft/pyright/blob/main/docs/configuration.md
+useLibraryCodeForTypes = true
+exclude = [".cache"]
+
+[tool.ruff]
+# https://beta.ruff.rs/docs/configuration/
+select = ['E', 'W', 'F', 'I', 'B', 'C4', 'ARG', 'SIM']
+ignore = ['W291', 'W292', 'W293']
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
